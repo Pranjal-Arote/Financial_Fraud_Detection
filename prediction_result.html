@@ -1,0 +1,42 @@
+<!-- prediction_result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0; /* Set background color */
+            text-align: center; /* Center align text */
+            padding-top: 50px; /* Add padding to top */
+        }
+        .container {
+            width: 50%; /* Set width of container */
+            margin: 0 auto; /* Center align container */
+            background-color: #fff; /* Set background color */
+            padding: 20px; /* Add padding */
+            border: 1px solid #ccc; /* Add border */
+            border-radius: 8px; /* Add border radius */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow */
+        }
+        h1 {
+            margin-bottom: 20px; /* Add margin bottom */
+        }
+        .prediction {
+            font-size: 24px; /* Set font size */
+            font-weight: bold; /* Set font weight */
+            color: #4CAF50; /* Set color */
+            margin-bottom: 20px; /* Add margin bottom */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Prediction Result</h1>
+        <p class="prediction">Predicted Fraud: {{ prediction }}</p>
+        <a href="/">Back to Form</a> <!-- Add link to go back to form -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Fraud Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0; /* Set background color */
+        }
+        .container {
+            width: 50%; /* Set width of container */
+            margin: 0 auto; /* Center align container */
+            padding: 20px; /* Add padding */
+            background-color: #fff; /* Set background color */
+            border: 1px solid #ccc; /* Add border */
+            border-radius: 8px; /* Add border radius */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow */
+        }
+        h1 {
+            text-align: center; /* Center align heading */
+        }
+        form {
+            text-align: center; /* Center align form */
+        }
+        input[type="text"] {
+            width: 100%; /* Set width of text inputs */
+            padding: 8px; /* Add padding */
+            margin-bottom: 10px; /* Add margin bottom */
+            border: 1px solid #ccc; /* Add border */
+            border-radius: 4px; /* Add border radius */
+            box-sizing: border-box; /* Include padding and border in element's total width and height */
+        }
+        input[type="submit"] {
+            width: 100%; /* Set width of submit button */
+            padding: 10px; /* Add padding */
+            background-color: #4CAF50; /* Set background color */
+            color: #fff; /* Set text color */
+            border: none; /* Remove border */
+            border-radius: 4px; /* Add border radius */
+            cursor: pointer; /* Set cursor to pointer */
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049; /* Change background color on hover */
+        }
+        p {
+            text-align: center; /* Center align paragraph */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Online Fraud Detection</h1>
+        <form action="{{ url_for('predict') }}" method="post">
+            <label for="amount">Amount:</label><br>
+            <input type="text" id="amount" name="amount"><br>
+            <label for="oldbalanceOrg">Old Balance Org:</label><br>
+            <input type="text" id="oldbalanceOrg" name="oldbalanceOrg"><br>
+            <label for="newbalanceOrig">New Balance Orig:</label><br>
+            <input type="text" id="newbalanceOrig" name="newbalanceOrig"><br>
+            <input type="submit" value="Predict">
+        </form>
+        {% if prediction %}
+            <p>Predicted Fraud: {{ prediction }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
